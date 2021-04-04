@@ -78,6 +78,82 @@
         let longestString = a => a.sort((s1, s2) => s2.length - s1.length)[0];
         console.log(longestString(["afrec", "aaa", "tudor", "summdar"]));
     </script> -->
+
+    <!-- <script>
+        function filterArray(numbers, value) {
+            const filteredNumbers = []
+            for (let i = 0; i <= numbers.length; i += 1) { if (numbers[i] > value) { filteredNumbers.push(numbers[i]) } }
+            return filteredNumbers
+        }
+        console.log(filterArray([12, 24, 8, 41, 76], 20))
+    </script> -->
+
+    <!-- <script>
+        function getCommonElements(array1, array2) {
+            const arr = [];
+            for (let i = 0; i <= array2.length; i += 1) { if (array1.includes(array2[i])) { arr.push(array2[i]) } };
+            return arr;
+        }
+        console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]))
+    </script> -->
+
+    <!-- <script>
+        function filterArray(numbers, value) {
+            
+            const filteredNumbers = [];
+            for (const i of numbers) {
+                if (i > value) {
+                    filteredNumbers.push(i);
+                }
+            }
+            return filteredNumbers;
+        }
+        console.log(filterArray([12, 24, 8, 41, 76], 20))
+    </script> -->
+
+    <!-- <script>
+        function getEvenNumbers(start, end) {
+
+            const arrDegree = []
+            for (i = start; i <= end; i += 1) { if (i % 2 === 0) { arrDegree.push(i) } }
+            return arrDegree
+
+        }
+        console.log(getEvenNumbers(0, 1000))
+    </script> -->
+
+    <!-- <script>
+        const start = 99;
+        const end = 452;
+        let number;
+        for (let i = start; i < end; i += 1) {
+            if (i % 7 === 0) {
+                number = i;
+                break;
+            }
+        }
+        console.log(number)
+    </script> -->
+
+    <!-- <script>
+        function findNumber(start, end, divisor) {
+            for (let i = start; i < end; i += 1) {
+                if (i % divisor === 0) {
+                    return i;
+                }
+            }
+        }
+        console.log(findNumber(67, 345, 13))
+    </script> -->
+
+    <!-- <script>
+        function includes(array, value) {
+
+            for (let a of array) { if (a === value) { return true } }
+            for (let a of array) { if (a !== value) { return false } }
+        }
+        console.log(includes([1, 2, 3, 4, 5], 4))
+    </script> -->
 </body>
 
 </html>
