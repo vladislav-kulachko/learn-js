@@ -373,7 +373,7 @@
         console.log(meanTemperature)
     </script> -->
 
-    <script>
+    <!-- <script>
         // Пиши код ниже этой строки
         function calculateMeanTemperature(forecast) {
             const { today: { low: todayLow, high: todayHigh }, tomorrow: { low: tomorrowLow, high: tomorrowHigh } } = forecast;
@@ -382,4 +382,28 @@
             return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
         }
         console.log(calculateMeanTemperature({ today: { low: 28, high: 32 }, tomorrow: { low: 25, high: 29 } }))
+    </script> -->
+
+    <script>
+        function makeTask(data) {
+            const completed = false;
+            const category = 'Общее';
+            const priority = 'Обычный';
+            // Пиши код ниже этой строки
+            const { text, category: category1, priority: priority1 } = data;
+            // const {
+            //     text,
+            //     category,
+            //     priority
+            // } = data;
+            const newTask = {
+                text: '',
+                category1: '',
+                priority1: '',
+                ...data
+            };
+            return newTask
+            // Пиши код выше этой строки
+        }
+        console.log(makeTask({}))
     </script>
