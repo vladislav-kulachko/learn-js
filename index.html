@@ -390,14 +390,43 @@
             const category = 'Общее';
             const priority = 'Обычный';
             // Пиши код ниже этой строки
+
             const newTask = {
                 completed,
                 category,
                 priority,
                 ...data
             };
-            return newTask
+            return newTask;
             // Пиши код выше этой строки
         }
         console.log(makeTask({}))
     </script> -->
+
+    <!-- <script>
+        // Пиши код ниже этой строки
+        function addOverNum(setNumb, ...args) {
+            let total = 0;
+
+            for (const arg of args) {
+                if (arg > setNumb) { total += arg; }
+            }
+
+            return total;
+            // Пиши код выше этой строки
+        }
+    </script> -->
+
+    <script>
+        // Пиши код ниже этой строки
+        function findMatches(arr, ...args) {
+            const matches = []; // Не изменяй эту строку
+            for (const arg of args) {
+                if (arr.includes(arg)) {
+                    matches.push(arg)
+                }
+            }
+            // Пиши код выше этой строки
+            return matches;
+        }
+    </script>
