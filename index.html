@@ -525,10 +525,15 @@ console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
 ];
 
 // Пиши код ниже этой строки
-function composeMessage(position) {return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position+1}-й в очереди.`}
+function composeMessage(position) { return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`}
 
 const messages = [];
 
-for(const order of orders){; 
-messages.push(composeMessage.call(order))}
+// for(const order of orders){
+// const indexArr = orders.indexOf(order)+1;
+// messages.push(composeMessage.call(order, indexArr))}
+
+ for(let pos=0; pos<orders.length; pos+=1){messages.push(composeMessage.call(orders[pos], pos+1))}
+
+console.log(messages)
     </script>
