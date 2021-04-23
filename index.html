@@ -79,7 +79,14 @@
     </script> -->
 
     <!-- <script>
-        let longestString = a => a.sort((s1, s2) => s2.length - s1.length)[0];
+        // let longestString = arr => arr.sort((s1, s2) => s2.length - s1.length)[0];
+
+        //то же самое без стрелок
+
+        function longestString(arr) {
+            const arrIncrease = arr.sort(function (s1, s2) { return s2.length - s1.length })
+            return arrIncrease[0]
+        }
         console.log(longestString(["afrec", "aaa", "tudor", "summdar"]));
     </script> -->
 
@@ -417,7 +424,7 @@
         }
     </script> -->
 
-    <script>
+    <!-- <script>
         // Пиши код ниже этой строки
         function findMatches(arr, ...args) {
             const matches = []; // Не изменяй эту строку
@@ -429,4 +436,71 @@
             // Пиши код выше этой строки
             return matches;
         }
+    </script> -->
+
+    <!-- <script>
+        const bookShelf = {
+            books: ['Последнее королевство', 'Мгла', 'Страж снов'],
+            updateBook(oldName, newName, addBookNumb) {
+                // Пиши код ниже этой строки
+                const bookIndex = this.books.indexOf(oldName);
+                if (bookIndex === -1) {
+                    this.books.splice(addBookNumb, 0, newName);
+                    return `добавили книгу "${newName}"`;
+                };
+                this.books.splice(bookIndex, 1);
+                this.books.splice(addBookNumb, 0, newName);
+                return `удалили книгу "${oldName}", добавили книгу "${newName}"`;
+
+                // Пиши код выше этой строки
+            },
+        };
+        console.log(bookShelf.updateBook('Последнее королевство', 'Джава сквирт - методы и алгоритмы', 2))
+        console.log(bookShelf)
+    </script> -->
+
+    <script>
+        const atTheOldToad = {
+            potions: [
+                { name: 'Зелье скорости', price: 460 },
+                { name: 'Дыхание дракона', price: 780 },
+                { name: 'Каменная кожа', price: 520 },
+            ],
+            // Пиши код ниже этой строки
+            getPotions() {
+                return this.potions;
+            },
+
+            addPotion(potionObj) {
+                for (const potion of this.potions) {
+                    if (potion.name === potionObj.name) {
+                        return `Зелье "${potionObj.name}" уже есть в инвентаре!`;
+                    }
+                }
+                this.potions.push(potionObj);
+            },
+
+            removePotion(potionName) {
+
+                for (let i = 0; i < this.potions.length; i += 1) {
+                    if (potionName === this.potions[i].name) {
+                        this.potions.splice(i, 1);
+                    }
+                }
+                return `Зелья "${potionName}" нет в инвентаре!`
+
+            },
+
+            updatePotionName(oldName, newName) {
+                for (let i = 0; i < this.potions.length; i += 1) {
+                    if (this.potions[i].name === oldName) { this.potions[i].name = newName }
+                }
+                return `Зелья "${oldName}" нет в инвентаре!`;
+            }
+        }
+
+        console.log(atTheOldToad.addPotion({ name: 'Каменная кожа', price: 520 }))
+        console.log(atTheOldToad.removePotion('Дыхание дракона'))
+        console.log(atTheOldToad.updatePotionName('Каменная кожа', 'Зелье неуязвимости'))
+        console.table(atTheOldToad.getPotions())
     </script>
