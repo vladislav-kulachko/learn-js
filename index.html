@@ -587,13 +587,13 @@
 };
 
 customer.setDiscount(0.15);
-console.log(customer.getDiscount()); // 0.15
+console.log(customer.getDiscount());
 customer.addOrder(5000, 'Steak');
-console.log(customer.getBalance()); // 19750
-console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
+console.log(customer.getBalance());
+console.log(customer.getOrders());
     </script> -->
 
-    <script>
+    <!-- <script>
         const orders = [
             { email: 'solomon@topmail.ua', dish: 'Burger' },
             { email: 'artemis@coldmail.net', dish: 'Pizza' },
@@ -612,5 +612,97 @@ console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
         for (let pos = 0; pos < orders.length; pos += 1) { messages.push(composeMessage.call(orders[pos], pos + 1)) }
 
         console.log(messages)
+
+    </script> -->
+
+    <!-- <script>
+        const utilsEdit = {
+            add(newUser) { return this.push(newUser) },
+            dell(remUser) {
+                for (const user of this) {
+                    if (remUser === user.name) { this.splice(this.indexOf(user), 1) }
+                }
+            },
+            rename(oldName, newName) {
+                for (const user of this) {
+                    if (oldName === user.name) { user.name = newName }
+                }
+            }
+        }
+
+        const users = [
+            { name: 'vlad', age: 36 },
+            { name: 'vero', age: 30 }
+        ]
+        utilsEdit.add.call(users, { name: 'julia', age: 29 })
+        utilsEdit.dell.call(users, 'vlad')
+        utilsEdit.rename.call(users, 'vero', 'nich')
+        console.log(users)
+    </script> -->
+
+    <!-- <script>
+        function processCall(recipient, connectTime, onAvailable, onNotAvailable) {
+            // Имитируем доступеность абонента случайным числом
+            const isRecipientAvailable = Math.random() > 0.5;
+
+            if (!isRecipientAvailable) {
+                onNotAvailable(recipient);
+                return;
+            }
+
+            onAvailable(recipient, connectTime);
+        }
+
+        function takeCall(name, min) {
+            console.log(`Соединяем с ${name}, ожидайте ${min} минут`);
+            // Логика принятия звонка
+        }
+
+        function activateAnsweringMachine(name) {
+            console.log(`Абонент ${name} недоступен, оставьте сообщение.`);
+            // Логика активации автоответчика
+        }
+
+        function leaveHoloMessage(name) {
+            console.log(`Абонент ${name} недоступен, записываем голограмму.`);
+            // Логика записи голограммы
+        }
+
+        processCall('Манго', 5, takeCall, activateAnsweringMachine);
+        processCall('Поли', 5, takeCall, leaveHoloMessage);
+    </script> -->
+
+    <script>
+        const service = {
+            mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+            subscribe(email) {
+                this.mailingList.push(email);
+                return `Почта ${email} добавлена в рассылку.`;
+            },
+            unsubscribe(email) {
+                this.mailingList = this.mailingList.filter((e) => e !== email);
+                return `Почта ${email} удалена из рассылки.`;
+            },
+        };
+
+        function logAndInvokeAction(email, action) {
+            console.log(`Выполняем действие с ${email}.`);
+            return action(email);
+        }
+
+        const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service));
+        console.log(firstInvoke);
+        // Почта kiwi@mail.uk добавлена в рассылку.
+
+        console.log(service.mailingList);
+        /* ['mango@mail.com', 
+            'poly@hotmail.de', 
+            'ajax@jmail.net', 
+            'kiwi@mail.uk']*/
+        const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
+        console.log(secondInvoke);
+        // Почта poly@hotmail.de удалена из рассылки.
+
+        console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
 
     </script>
