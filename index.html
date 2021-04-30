@@ -618,7 +618,7 @@ console.log(customer.getOrders());
     <!-- <script>
         const utilsEdit = {
             add(newUser) { return this.push(newUser) },
-            dell(remUser) {
+            del(remUser) {
                 for (const user of this) {
                     if (remUser === user.name) { this.splice(this.indexOf(user), 1) }
                 }
@@ -635,7 +635,7 @@ console.log(customer.getOrders());
             { name: 'vero', age: 30 }
         ]
         utilsEdit.add.call(users, { name: 'julia', age: 29 })
-        utilsEdit.dell.call(users, 'vlad')
+        utilsEdit.del.call(users, 'vlad')
         utilsEdit.rename.call(users, 'vero', 'nich')
         console.log(users)
     </script> -->
@@ -672,7 +672,7 @@ console.log(customer.getOrders());
         processCall('Поли', 5, takeCall, leaveHoloMessage);
     </script> -->
 
-    <script>
+    <!-- <script>
         const service = {
             mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
             subscribe(email) {
@@ -704,5 +704,29 @@ console.log(customer.getOrders());
         // Почта poly@hotmail.de удалена из рассылки.
 
         console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
+
+    </script> -->
+
+    <script>
+        const mainCounter = () => { let i = 1; const counter = () => { console.log(i); i++ }; return counter }
+        const c = mainCounter()
+        c()
+        c()
+
+        const workWithSalary = () => {
+            let salary = 0; return {
+                add(num) { salary += num; },
+                sub(num) { salary -= num; },
+                del() { salary = 0 },
+                wiew() { return `На вашем счету ${salary} украинских гульденов` }
+            }
+        }
+        const finalSalary = workWithSalary()
+        finalSalary.add(2000)
+        finalSalary.sub(1500)
+        finalSalary.del()
+        finalSalary.add(5000)
+        console.log(finalSalary.wiew())
+
 
     </script>
