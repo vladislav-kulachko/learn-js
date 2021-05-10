@@ -761,12 +761,13 @@ console.log(customer.getOrders());
         console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
     </script> -->
 
-    <script>
+    <!-- <script>
         function StringBuilder(baseValue) { this.value = baseValue }
+
         StringBuilder.prototype.getValue = function () { return this.value }
-        StringBuilder.prototype.padEnd = function (str) { this.value = `${this.value}${str}` }
-        StringBuilder.prototype.padStart = function (str) { this.value = `${str}${this.value}` }
-        StringBuilder.prototype.padBoth = function (str) { this.value = `${str}${this.value}${str}` }
+        StringBuilder.prototype.padEnd = function (str) { this.value = this.value + str }
+        StringBuilder.prototype.padStart = function (str) { this.value = str + this.value }
+        StringBuilder.prototype.padBoth = function (str) { this.padStart(str); this.padEnd(str) }
 
         // Пиши код выше этой строки
         const builder = new StringBuilder('.');
@@ -777,4 +778,231 @@ console.log(customer.getOrders());
         console.log(builder.getValue()); // '^.^'
         builder.padBoth('=');
         console.log(builder.getValue()); // '=^.^='
+    </script> -->
+
+    <!-- <script>
+        class Car {
+            #brand;
+            constructor({ brand, model, price }) {
+                this.#brand = brand;
+                this.model = model;
+                this.price = price;
+            }
+            getBrand() { return this.#brand }
+            changeBrand(newBrand) { this.#brand = newBrand }
+        }
+        const myCar = new Car({ brand: 'Zaz', model: '968M', price: 'просто увезите это' })
+        console.log(myCar)
+        console.log(myCar.getBrand())
+        myCar.changeBrand('ZAZ')
+        console.log(myCar)
+
+    </script> -->
+
+    <!-- <script>
+        class Storage {
+            #items;
+
+            constructor(items) {
+                this.#items = items
+            }
+
+            getItems() {
+                return this.#items
+            }
+
+            addItem(newItem) {
+                this.#items.push(newItem)
+            }
+
+            removeItem(item) {
+                const itemIndex = this.#items.indexOf(item);
+                this.#items.splice(itemIndex, 1)
+            }
+
+        }
+        // Пиши код выше этой строки
+        const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+        console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+        storage.addItem("Дроид");
+        console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+        storage.removeItem("Пролонгер");
+        console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+
+    </script> -->
+
+    <!-- <script>
+        class StringBuilder {
+            #value;
+
+            constructor(baseValue) {
+                this.#value = baseValue;
+            }
+
+            getValue() {
+                return this.#value;
+            }
+
+            padEnd(str) {
+                this.#value = this.#value + str;
+            }
+
+            padStart(str) {
+                this.#value = str + this.#value;
+            }
+
+            padBoth(str) {
+                this.padStart(str);
+                this.padEnd(str);
+            }
+
+        }
+
+        // Пиши код выше этой строки
+        const builder = new StringBuilder('.');
+        console.log(builder.getValue()); // '.'
+        builder.padStart('^');
+        console.log(builder.getValue()); // '^.'
+        builder.padEnd('^');
+        console.log(builder.getValue()); // '^.^'
+        builder.padBoth('=');
+        console.log(builder.getValue()); // '=^.^='
+    </script> -->
+
+    <!-- <script>
+        class Car {
+            // Пиши код ниже этой строки
+            static MAX_PRICE = 50000;
+            #price;
+
+            constructor({ price }) {
+                this.#price = price;
+            }
+
+            get price() {
+                return this.#price;
+            }
+
+            set price(newPrice) {
+                if (newPrice < Car.MAX_PRICE)
+                    this.#price = newPrice;
+            }
+            // Пиши код выше этой строки
+        }
+
+        const audi = new Car({ price: 35000 });
+        console.log(audi.price); // 35000
+
+        audi.price = 49000;
+        console.log(audi.price); // 49000
+
+        audi.price = 51000;
+        console.log(audi.price); // 49000
+    </script> -->
+
+    <script>
+        class Car {
+            static #MAX_PRICE = 50000;
+            // Пиши код ниже этой строки
+            static checkPrice(price) {
+                if (price > Car.#MAX_PRICE) { return "Внимание! Цена превышает допустимую." }
+                return "Всё хорошо, цена в порядке."
+            }
+            // Пиши код выше этой строки
+            constructor({ price }) {
+                this.price = price;
+            }
+        }
+
+        const audi = new Car({ price: 36000 });
+        const bmw = new Car({ price: 64000 });
+
+        console.log(Car.checkPrice(audi.price)); // Всё хорошо, цена в порядке.
+        console.log(Car.checkPrice(bmw.price)); // Внимание! Цена превышает допустимую.
+    </script>
+
+    <script>
+        class User {
+            email;
+
+            constructor(email) {
+                this.email = email;
+            }
+
+            get email() {
+                return this.email;
+            }
+
+            set email(newEmail) {
+                this.email = newEmail;
+            }
+        }
+        class Admin extends User {
+            static AccessLevel = { BASIC: 'basic', SUPERUSER: 'superuser' };
+            accessLevel;
+            blacklistedEmails = [];
+            constructor({ email, accessLevel }) {
+                super(email);
+                this.accessLevel = accessLevel
+            }
+            blacklist(email) { this.blacklistedEmails.push(email) }
+            isBlacklisted(email) { return this.blacklistedEmails.includes(email) }
+        }
+
+        const mango = new Admin({
+            email: 'mango@mail.com',
+            accessLevel: Admin.AccessLevel.SUPERUSER
+        });
+        console.log(mango.email); // mango@mail.com
+        console.log(mango.accessLevel); // superuser
+        mango.blacklist('poly@mail.com');
+        console.log(mango.blacklistedEmails); // 'poly@mail.com'
+        console.log(mango.isBlacklisted('mango@mail.com')); //  false
+        console.log(mango.isBlacklisted('poly@mail.com')); // true
+
+    </script>
+
+    <script>
+        function getCommonElements(firstArray, secondArray) {
+            const commonElements = [];
+
+            firstArray.forEach(function (number) {
+                if (secondArray.includes(number)) { commonElements.push(number) }
+            }
+            )
+
+            return commonElements;
+
+        }
+
+        function changeEven(numbers, value) {
+
+            const newArr = [];
+            numbers.forEach(function (number) {
+                if (number % 2 === 0) {
+                    newArr.push(number + value)
+                }
+                else newArr.push(number)
+            });
+            return newArr;
+
+        }
+
+        console.log(changeEven([44, 13, 81, 92, 36, 54], 100))
+    </script>
+
+    <script>
+        const planets = ['Земля', 'Марс', 'Венера', 'Юпитер'];
+
+        const planetsLengths = planets.map((planet) => planet.length)
+        console.log(planetsLengths)
+
+        const getUserNames = users => {
+            const names = users.map((user) => user.name);
+            return names
+        }
+
+        const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+        const evenNumbers = numbers.filter((number) => number % 2 === 0);
+        const oddNumbers = numbers.filter((number) => number % 2 !== 0);
     </script>
