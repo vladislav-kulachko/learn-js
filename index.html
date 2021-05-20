@@ -10,7 +10,7 @@
 
 <body>
 
-    <!-- <script src="./1.js" type="module"></script> -->
+    <!-- <script src="./calculate_volume.js" type="module"></script> -->
 
 
     <!-- второй модуль -->
@@ -165,7 +165,6 @@
         }
         console.log(includes([1, 2, 3, 4, 5], 4))
     </script> -->
-
 
     <!-- третий модуль -->
 
@@ -381,11 +380,10 @@
     </script> -->
 
     <!-- <script>
-        // Пиши код ниже этой строки
+        
         function calculateMeanTemperature(forecast) {
             const { today: { low: todayLow, high: todayHigh }, tomorrow: { low: tomorrowLow, high: tomorrowHigh } } = forecast;
 
-            // Пиши код выше этой строки
             return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
         }
         console.log(calculateMeanTemperature({ today: { low: 28, high: 32 }, tomorrow: { low: 25, high: 29 } }))
@@ -396,7 +394,6 @@
             const completed = false;
             const category = 'Общее';
             const priority = 'Обычный';
-            // Пиши код ниже этой строки
 
             const newTask = {
                 completed,
@@ -405,13 +402,13 @@
                 ...data
             };
             return newTask;
-            // Пиши код выше этой строки
+            
         }
         console.log(makeTask({}))
     </script> -->
 
     <!-- <script>
-        // Пиши код ниже этой строки
+        
         function addOverNum(setNumb, ...args) {
             let total = 0;
 
@@ -420,20 +417,20 @@
             }
 
             return total;
-            // Пиши код выше этой строки
+            
         }
     </script> -->
 
     <!-- <script>
-        // Пиши код ниже этой строки
+        
         function findMatches(arr, ...args) {
-            const matches = []; // Не изменяй эту строку
+            const matches = []; 
             for (const arg of args) {
                 if (arr.includes(arg)) {
                     matches.push(arg)
                 }
             }
-            // Пиши код выше этой строки
+            
             return matches;
         }
     </script> -->
@@ -443,7 +440,7 @@
         const bookShelf = {
             books: ['Последнее королевство', 'Мгла', 'Страж снов'],
             updateBook(oldName, newName, addBookNumb) {
-                // Пиши код ниже этой строки
+                
                 const bookIndex = this.books.indexOf(oldName);
                 if (bookIndex === -1) {
                     this.books.splice(addBookNumb, 0, newName);
@@ -453,7 +450,6 @@
                 this.books.splice(addBookNumb, 0, newName);
                 return `удалили книгу "${oldName}", добавили книгу "${newName}"`;
 
-                // Пиши код выше этой строки
             },
         };
         console.log(bookShelf.updateBook('Последнее королевство', 'Джава сквирт - методы и алгоритмы', 2))
@@ -467,7 +463,7 @@
                 { name: 'Дыхание дракона', price: 780 },
                 { name: 'Каменная кожа', price: 520 },
             ],
-            // Пиши код ниже этой строки
+            
             getPotions() {
                 return this.potions;
             },
@@ -518,9 +514,7 @@
                 return onError(pizzaName)
             },
         }
-        // Пиши код выше этой строки
 
-        // Колбэк для onSuccess
         function makePizza(pizzaName) {
             return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
         }
@@ -543,7 +537,7 @@
     <!-- <script>
         const pizzaPalace = {
   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
-  // Пиши код ниже этой строки
+  
   checkPizza(pizzaName) {
     return this.pizzas.includes(pizzaName);
   },
@@ -556,7 +550,7 @@
 
     return `Заказ принят, готовим пиццу «${pizzaName}».`;
   },
-  // Пиши код выше этой строки
+  
 };
     </script> -->
 
@@ -600,7 +594,7 @@ console.log(customer.getOrders());
             { email: 'jacob@mail.com', dish: 'Taco' },
         ];
 
-        // Пиши код ниже этой строки
+       
         function composeMessage(position) { return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.` }
 
         const messages = [];
@@ -1007,163 +1001,430 @@ console.log(customer.getOrders());
         const oddNumbers = numbers.filter((number) => number % 2 !== 0);
     </script> -->
 
-<script>
-    const getUsersWithAge = (users, minAge, maxAge) => {
-        const getUsersWithSameAges = users.filter((user) => 
-            user.age > minAge && user.age < maxAge
-        )
-        return getUsersWithSameAges
-    };
-    console.log(getUsersWithAge([
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-    age: 37
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-    age: 34
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-    age: 24
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-    age: 21
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-    age: 27
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-    age: 38
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-    age: 39
-  }
-], 20, 30))
-</script>
+    <!-- <script>
+        const getUsersWithAge = (users, minAge, maxAge) => {
+            const getUsersWithSameAges = users.filter((user) =>
+                user.age > minAge && user.age < maxAge
+            )
+            return getUsersWithSameAges
+        };
+        console.log(getUsersWithAge([
+            {
+                name: 'Moore Hensley',
+                email: 'moorehensley@indexia.com',
+                eyeColor: 'blue',
+                friends: ['Sharron Pace'],
+                isActive: false,
+                balance: 2811,
+                gender: 'male',
+                age: 37
+            },
+            {
+                name: 'Sharlene Bush',
+                email: 'sharlenebush@tubesys.com',
+                eyeColor: 'blue',
+                friends: ['Briana Decker', 'Sharron Pace'],
+                isActive: true,
+                balance: 3821,
+                gender: 'female',
+                age: 34
+            },
+            {
+                name: 'Ross Vazquez',
+                email: 'rossvazquez@xinware.com',
+                eyeColor: 'green',
+                friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+                isActive: false,
+                balance: 3793,
+                gender: 'male',
+                age: 24
+            },
+            {
+                name: 'Elma Head',
+                email: 'elmahead@omatom.com',
+                eyeColor: 'green',
+                friends: ['Goldie Gentry', 'Aisha Tran'],
+                isActive: true,
+                balance: 2278,
+                gender: 'female',
+                age: 21
+            },
+            {
+                name: 'Carey Barr',
+                email: 'careybarr@nurali.com',
+                eyeColor: 'blue',
+                friends: ['Jordan Sampson', 'Eddie Strong'],
+                isActive: true,
+                balance: 3951,
+                gender: 'male',
+                age: 27
+            },
+            {
+                name: 'Blackburn Dotson',
+                email: 'blackburndotson@furnigeer.com',
+                eyeColor: 'brown',
+                friends: ['Jacklyn Lucas', 'Linda Chapman'],
+                isActive: false,
+                balance: 1498,
+                gender: 'male',
+                age: 38
+            },
+            {
+                name: 'Sheree Anthony',
+                email: 'shereeanthony@kog.com',
+                eyeColor: 'brown',
+                friends: ['Goldie Gentry', 'Briana Decker'],
+                isActive: true,
+                balance: 2764,
+                gender: 'female',
+                age: 39
+            }
+        ], 20, 30))
+    </script> -->
 
-<script>
-    const getTotalFriendCount = users => {
-  const totalNumbFriend = users.reduce((totalNumb, user)=>{return totalNumb + user.friends.length}, 0)
-  return totalNumbFriend
-};
+    <!-- <script>
+        const getTotalFriendCount = users => {
+            const totalNumbFriend = users.reduce((totalNumb, user) => { return totalNumb + user.friends.length }, 0)
+            return totalNumbFriend
+        };
 
-console.log(getTotalFriendCount([
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-    age: 37
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-    age: 34
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-    age: 24
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-    age: 21
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-    age: 27
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-    age: 38
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-    age: 39
-  }
-]))
-</script>
+        console.log(getTotalFriendCount([
+            {
+                name: 'Moore Hensley',
+                email: 'moorehensley@indexia.com',
+                eyeColor: 'blue',
+                friends: ['Sharron Pace'],
+                isActive: false,
+                balance: 2811,
+                gender: 'male',
+                age: 37
+            },
+            {
+                name: 'Sharlene Bush',
+                email: 'sharlenebush@tubesys.com',
+                eyeColor: 'blue',
+                friends: ['Briana Decker', 'Sharron Pace'],
+                isActive: true,
+                balance: 3821,
+                gender: 'female',
+                age: 34
+            },
+            {
+                name: 'Ross Vazquez',
+                email: 'rossvazquez@xinware.com',
+                eyeColor: 'green',
+                friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+                isActive: false,
+                balance: 3793,
+                gender: 'male',
+                age: 24
+            },
+            {
+                name: 'Elma Head',
+                email: 'elmahead@omatom.com',
+                eyeColor: 'green',
+                friends: ['Goldie Gentry', 'Aisha Tran'],
+                isActive: true,
+                balance: 2278,
+                gender: 'female',
+                age: 21
+            },
+            {
+                name: 'Carey Barr',
+                email: 'careybarr@nurali.com',
+                eyeColor: 'blue',
+                friends: ['Jordan Sampson', 'Eddie Strong'],
+                isActive: true,
+                balance: 3951,
+                gender: 'male',
+                age: 27
+            },
+            {
+                name: 'Blackburn Dotson',
+                email: 'blackburndotson@furnigeer.com',
+                eyeColor: 'brown',
+                friends: ['Jacklyn Lucas', 'Linda Chapman'],
+                isActive: false,
+                balance: 1498,
+                gender: 'male',
+                age: 38
+            },
+            {
+                name: 'Sheree Anthony',
+                email: 'shereeanthony@kog.com',
+                eyeColor: 'brown',
+                friends: ['Goldie Gentry', 'Briana Decker'],
+                isActive: true,
+                balance: 2764,
+                gender: 'female',
+                age: 39
+            }
+        ]))
+    </script> -->
+
+    <!-- <script>
+        const tweets = [
+            { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+            { id: '001', likes: 2, tags: ['html', 'css'] },
+            { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+            { id: '003', likes: 8, tags: ['css', 'react'] },
+            { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+        ];
+
+        const getTags = tweets =>
+            tweets.reduce((allTags, tweet) => {
+                allTags.push(...tweet.tags);
+
+                return allTags;
+            }, []);
+
+        const tags = getTags(tweets);
+
+        // Вынесем callback-функцию отдельно, а в reducе передадим ссылку на нее.
+        // Это стандартная практика если callback-функция довольно большая.
+
+        // Если в объекте-аккумуляторе acc нету своего свойства с ключем tag,
+        // то создаем его и записывает ему значение 0.
+        // В противном случае увеличиваем значение на 1.
+        const getTagStats = (acc, tag) => {
+            if (!acc.hasOwnProperty(tag)) {
+                acc[tag] = 0;
+            }
+
+            acc[tag] += 1;
+
+            return acc;
+        };
+
+        // Начальное значение аккумулятора это пустой объект {}
+        const countTags = tags => tags.reduce(getTagStats, {});
+
+        const tagCount = countTags(tags);
+        console.log(tagCount);
+    </script> -->
+
+    <!-- <script>
+        const users = [
+            { name: 'Mango', daysActive: 15 },
+            { name: 'Poly', daysActive: 4 },
+            { name: 'Ajax', daysActive: 27 },
+            { name: 'Chelsey', daysActive: 2 },
+        ];
+
+        const sortByActiveDays = (a, b) => b.daysActive - a.daysActive;
+
+        console.log(users.sort(sortByActiveDays));
+    </script> -->
+
+    <script>
+        const getSortedFriends = users => {
+            return users.flatMap((user) => user.friends)
+                .filter((friendName, ind, arr) => arr.indexOf(friendName) === ind)
+                .sort((friendName1, friendName2) => friendName1.localeCompare(friendName2))
+        };
+        console.log(getSortedFriends([
+            {
+                name: 'Moore Hensley',
+                email: 'moorehensley@indexia.com',
+                eyeColor: 'blue',
+                friends: ['Sharron Pace'],
+                isActive: false,
+                balance: 2811,
+                gender: 'male'
+            },
+            {
+                name: 'Sharlene Bush',
+                email: 'sharlenebush@tubesys.com',
+                eyeColor: 'blue',
+                friends: ['Briana Decker', 'Sharron Pace'],
+                isActive: true,
+                balance: 3821,
+                gender: 'female'
+            },
+            {
+                name: 'Ross Vazquez',
+                email: 'rossvazquez@xinware.com',
+                eyeColor: 'green',
+                friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+                isActive: false,
+                balance: 3793,
+                gender: 'male'
+            },
+            {
+                name: 'Elma Head',
+                email: 'elmahead@omatom.com',
+                eyeColor: 'green',
+                friends: ['Goldie Gentry', 'Aisha Tran'],
+                isActive: true,
+                balance: 2278,
+                gender: 'female'
+            },
+            {
+                name: 'Carey Barr',
+                email: 'careybarr@nurali.com',
+                eyeColor: 'blue',
+                friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+                isActive: true,
+                balance: 3951,
+                gender: 'male'
+            },
+            {
+                name: 'Blackburn Dotson',
+                email: 'blackburndotson@furnigeer.com',
+                eyeColor: 'brown',
+                friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+                isActive: false,
+                balance: 1498,
+                gender: 'male'
+            },
+            {
+                name: 'Sheree Anthony',
+                email: 'shereeanthony@kog.com',
+                eyeColor: 'brown',
+                friends: ['Goldie Gentry', 'Briana Decker'],
+                isActive: true,
+                balance: 2764,
+                gender: 'female'
+            }
+        ]))
+    </script>
+
+    <script>
+        // Пиши код ниже этой строки
+        const getTotalBalanceByGender = (users, gender) => {
+
+            return users.filter((user) => user.gender === gender).reduce((acc, user) => acc + user.balance, 0)
+        };
+        console.log(getTotalBalanceByGender([
+            {
+                name: 'Moore Hensley',
+                email: 'moorehensley@indexia.com',
+                eyeColor: 'blue',
+                friends: ['Sharron Pace'],
+                isActive: false,
+                balance: 2811,
+                gender: 'male'
+            },
+            {
+                name: 'Sharlene Bush',
+                email: 'sharlenebush@tubesys.com',
+                eyeColor: 'blue',
+                friends: ['Briana Decker', 'Sharron Pace'],
+                isActive: true,
+                balance: 3821,
+                gender: 'female'
+            },
+            {
+                name: 'Ross Vazquez',
+                email: 'rossvazquez@xinware.com',
+                eyeColor: 'green',
+                friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+                isActive: false,
+                balance: 3793,
+                gender: 'male'
+            },
+            {
+                name: 'Elma Head',
+                email: 'elmahead@omatom.com',
+                eyeColor: 'green',
+                friends: ['Goldie Gentry', 'Aisha Tran'],
+                isActive: true,
+                balance: 2278,
+                gender: 'female'
+            },
+            {
+                name: 'Carey Barr',
+                email: 'careybarr@nurali.com',
+                eyeColor: 'blue',
+                friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+                isActive: true,
+                balance: 3951,
+                gender: 'male'
+            },
+            {
+                name: 'Blackburn Dotson',
+                email: 'blackburndotson@furnigeer.com',
+                eyeColor: 'brown',
+                friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+                isActive: false,
+                balance: 1498,
+                gender: 'male'
+            },
+            {
+                name: 'Sheree Anthony',
+                email: 'shereeanthony@kog.com',
+                eyeColor: 'brown',
+                friends: ['Goldie Gentry', 'Briana Decker'],
+                isActive: true,
+                balance: 2764,
+                gender: 'female'
+            }
+        ], 'male'))
+// Пиши код выше этой строки
+    </script>
+
+    <script>
+        const tweetsRom = [
+            { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+            { id: '001', likes: 2, tags: ['html', 'css'] },
+            { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+            { id: '003', likes: 8, tags: ['css', 'react'] },
+            { id: '004', likes: 28, tags: ['js', 'nodejs', 'react'] },
+        ];
+
+        const tweetsVl = [
+            { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+            { id: '001', likes: 2, tags: ['html', 'css'] },
+            { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+            { id: '003', likes: 8, tags: ['css', 'react'] },
+            { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+        ];
+
+        // Пройдем по всем элементам коллекции и прибавим значения свойства likes
+        // к аккумулятору, начальное значение которого укажем 0.
+        const likesRom = tweetsRom.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+        const likesVl = tweetsVl.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+        console.log(likesRom);
+        console.log(likesVl);
+
+        // Наверное подсчет лайков не одиночная операция, поэтому напишем функцию
+        // для подсчета лайков из коллекции
+        const countLikes = tweets =>
+            tweets.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+
+        console.log(countLikes(tweetsRom));
+        console.log(countLikes(tweetsVl));
+    </script>
+
+    <script>
+        class Article {
+            constructor(title, date) {
+                this.title = title;
+                this.date = date;
+                articles.push(this)
+            }
+            // static createArr(obj) { articles.push(obj) }
+            static compare(articleA, articleB) {
+                return articleA.date - articleB.date;
+            }
+            static delObj(valueTitle) { articles = articles.filter(obj => obj.title !== valueTitle) }
+            // set title(newTitle) { this.title = newTitle }
+            static rename(oldTitle, newTitle) { articles = articles.map((obj) => { if (obj.title === oldTitle) { obj.title = newTitle } return obj }) }
+        }
+
+        // использование
+        let articles = [];
+        new Article("HTML", new Date(2019, 12, 1));
+        new Article("CSS", new Date(2019, 10, 1));
+        new Article("JavaScript", new Date(2019, 11, 1));
+
+        articles.sort(Article.compare);
+        console.log(articles);
+        console.log(articles[0].title);
+        // Article.delObj("JavaScript");
+        console.log(articles);
+        Article.rename("HTML", "HTml");
+        console.log(articles);
+
+
+    </script>
