@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- <script src="./calculate_volume.js" type="module"></script> -->
 
     <!-- второй модуль -->
@@ -1213,214 +1214,214 @@ console.log(customer.getOrders());
     </script> -->
 
     <script>
-      const getSortedFriends = (users) => {
-        return users
-          .flatMap((user) => user.friends)
-          .filter((friendName, ind, arr) => arr.indexOf(friendName) === ind)
-          .sort((friendName1, friendName2) =>
-            friendName1.localeCompare(friendName2)
-          );
-      };
-      console.log(
-        getSortedFriends([
-          {
-            name: "Moore Hensley",
-            email: "moorehensley@indexia.com",
-            eyeColor: "blue",
-            friends: ["Sharron Pace"],
-            isActive: false,
-            balance: 2811,
-            gender: "male",
-          },
-          {
-            name: "Sharlene Bush",
-            email: "sharlenebush@tubesys.com",
-            eyeColor: "blue",
-            friends: ["Briana Decker", "Sharron Pace"],
-            isActive: true,
-            balance: 3821,
-            gender: "female",
-          },
-          {
-            name: "Ross Vazquez",
-            email: "rossvazquez@xinware.com",
-            eyeColor: "green",
-            friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-            isActive: false,
-            balance: 3793,
-            gender: "male",
-          },
-          {
-            name: "Elma Head",
-            email: "elmahead@omatom.com",
-            eyeColor: "green",
-            friends: ["Goldie Gentry", "Aisha Tran"],
-            isActive: true,
-            balance: 2278,
-            gender: "female",
-          },
-          {
-            name: "Carey Barr",
-            email: "careybarr@nurali.com",
-            eyeColor: "blue",
-            friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
-            isActive: true,
-            balance: 3951,
-            gender: "male",
-          },
-          {
-            name: "Blackburn Dotson",
-            email: "blackburndotson@furnigeer.com",
-            eyeColor: "brown",
-            friends: [
-              "Jacklyn Lucas",
-              "Linda Chapman",
-              "Adrian Cross",
-              "Solomon Fokes",
-            ],
-            isActive: false,
-            balance: 1498,
-            gender: "male",
-          },
-          {
-            name: "Sheree Anthony",
-            email: "shereeanthony@kog.com",
-            eyeColor: "brown",
-            friends: ["Goldie Gentry", "Briana Decker"],
-            isActive: true,
-            balance: 2764,
-            gender: "female",
-          },
-        ])
-      );
+        const getSortedFriends = (users) => {
+            return users
+                .flatMap((user) => user.friends)
+                .filter((friendName, ind, arr) => arr.indexOf(friendName) === ind)
+                .sort((friendName1, friendName2) =>
+                    friendName1.localeCompare(friendName2)
+                );
+        };
+        console.log(
+            getSortedFriends([
+                {
+                    name: "Moore Hensley",
+                    email: "moorehensley@indexia.com",
+                    eyeColor: "blue",
+                    friends: ["Sharron Pace"],
+                    isActive: false,
+                    balance: 2811,
+                    gender: "male",
+                },
+                {
+                    name: "Sharlene Bush",
+                    email: "sharlenebush@tubesys.com",
+                    eyeColor: "blue",
+                    friends: ["Briana Decker", "Sharron Pace"],
+                    isActive: true,
+                    balance: 3821,
+                    gender: "female",
+                },
+                {
+                    name: "Ross Vazquez",
+                    email: "rossvazquez@xinware.com",
+                    eyeColor: "green",
+                    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+                    isActive: false,
+                    balance: 3793,
+                    gender: "male",
+                },
+                {
+                    name: "Elma Head",
+                    email: "elmahead@omatom.com",
+                    eyeColor: "green",
+                    friends: ["Goldie Gentry", "Aisha Tran"],
+                    isActive: true,
+                    balance: 2278,
+                    gender: "female",
+                },
+                {
+                    name: "Carey Barr",
+                    email: "careybarr@nurali.com",
+                    eyeColor: "blue",
+                    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+                    isActive: true,
+                    balance: 3951,
+                    gender: "male",
+                },
+                {
+                    name: "Blackburn Dotson",
+                    email: "blackburndotson@furnigeer.com",
+                    eyeColor: "brown",
+                    friends: [
+                        "Jacklyn Lucas",
+                        "Linda Chapman",
+                        "Adrian Cross",
+                        "Solomon Fokes",
+                    ],
+                    isActive: false,
+                    balance: 1498,
+                    gender: "male",
+                },
+                {
+                    name: "Sheree Anthony",
+                    email: "shereeanthony@kog.com",
+                    eyeColor: "brown",
+                    friends: ["Goldie Gentry", "Briana Decker"],
+                    isActive: true,
+                    balance: 2764,
+                    gender: "female",
+                },
+            ])
+        );
     </script>
 
     <script>
-      // Пиши код ниже этой строки
-      const getTotalBalanceByGender = (users, gender) => {
-        return users
-          .filter((user) => user.gender === gender)
-          .reduce((acc, user) => acc + user.balance, 0);
-      };
-      console.log(
-        getTotalBalanceByGender(
-          [
-            {
-              name: "Moore Hensley",
-              email: "moorehensley@indexia.com",
-              eyeColor: "blue",
-              friends: ["Sharron Pace"],
-              isActive: false,
-              balance: 2811,
-              gender: "male",
-            },
-            {
-              name: "Sharlene Bush",
-              email: "sharlenebush@tubesys.com",
-              eyeColor: "blue",
-              friends: ["Briana Decker", "Sharron Pace"],
-              isActive: true,
-              balance: 3821,
-              gender: "female",
-            },
-            {
-              name: "Ross Vazquez",
-              email: "rossvazquez@xinware.com",
-              eyeColor: "green",
-              friends: [
-                "Marilyn Mcintosh",
-                "Padilla Garrison",
-                "Naomi Buckner",
-              ],
-              isActive: false,
-              balance: 3793,
-              gender: "male",
-            },
-            {
-              name: "Elma Head",
-              email: "elmahead@omatom.com",
-              eyeColor: "green",
-              friends: ["Goldie Gentry", "Aisha Tran"],
-              isActive: true,
-              balance: 2278,
-              gender: "female",
-            },
-            {
-              name: "Carey Barr",
-              email: "careybarr@nurali.com",
-              eyeColor: "blue",
-              friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
-              isActive: true,
-              balance: 3951,
-              gender: "male",
-            },
-            {
-              name: "Blackburn Dotson",
-              email: "blackburndotson@furnigeer.com",
-              eyeColor: "brown",
-              friends: [
-                "Jacklyn Lucas",
-                "Linda Chapman",
-                "Adrian Cross",
-                "Solomon Fokes",
-              ],
-              isActive: false,
-              balance: 1498,
-              gender: "male",
-            },
-            {
-              name: "Sheree Anthony",
-              email: "shereeanthony@kog.com",
-              eyeColor: "brown",
-              friends: ["Goldie Gentry", "Briana Decker"],
-              isActive: true,
-              balance: 2764,
-              gender: "female",
-            },
-          ],
-          "male"
-        )
-      );
+        // Пиши код ниже этой строки
+        const getTotalBalanceByGender = (users, gender) => {
+            return users
+                .filter((user) => user.gender === gender)
+                .reduce((acc, user) => acc + user.balance, 0);
+        };
+        console.log(
+            getTotalBalanceByGender(
+                [
+                    {
+                        name: "Moore Hensley",
+                        email: "moorehensley@indexia.com",
+                        eyeColor: "blue",
+                        friends: ["Sharron Pace"],
+                        isActive: false,
+                        balance: 2811,
+                        gender: "male",
+                    },
+                    {
+                        name: "Sharlene Bush",
+                        email: "sharlenebush@tubesys.com",
+                        eyeColor: "blue",
+                        friends: ["Briana Decker", "Sharron Pace"],
+                        isActive: true,
+                        balance: 3821,
+                        gender: "female",
+                    },
+                    {
+                        name: "Ross Vazquez",
+                        email: "rossvazquez@xinware.com",
+                        eyeColor: "green",
+                        friends: [
+                            "Marilyn Mcintosh",
+                            "Padilla Garrison",
+                            "Naomi Buckner",
+                        ],
+                        isActive: false,
+                        balance: 3793,
+                        gender: "male",
+                    },
+                    {
+                        name: "Elma Head",
+                        email: "elmahead@omatom.com",
+                        eyeColor: "green",
+                        friends: ["Goldie Gentry", "Aisha Tran"],
+                        isActive: true,
+                        balance: 2278,
+                        gender: "female",
+                    },
+                    {
+                        name: "Carey Barr",
+                        email: "careybarr@nurali.com",
+                        eyeColor: "blue",
+                        friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+                        isActive: true,
+                        balance: 3951,
+                        gender: "male",
+                    },
+                    {
+                        name: "Blackburn Dotson",
+                        email: "blackburndotson@furnigeer.com",
+                        eyeColor: "brown",
+                        friends: [
+                            "Jacklyn Lucas",
+                            "Linda Chapman",
+                            "Adrian Cross",
+                            "Solomon Fokes",
+                        ],
+                        isActive: false,
+                        balance: 1498,
+                        gender: "male",
+                    },
+                    {
+                        name: "Sheree Anthony",
+                        email: "shereeanthony@kog.com",
+                        eyeColor: "brown",
+                        friends: ["Goldie Gentry", "Briana Decker"],
+                        isActive: true,
+                        balance: 2764,
+                        gender: "female",
+                    },
+                ],
+                "male"
+            )
+        );
       // Пиши код выше этой строки
     </script>
 
     <script>
-      const tweetsRom = [
-        { id: "000", likes: 5, tags: ["js", "nodejs"] },
-        { id: "001", likes: 2, tags: ["html", "css"] },
-        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-        { id: "003", likes: 8, tags: ["css", "react"] },
-        { id: "004", likes: 28, tags: ["js", "nodejs", "react"] },
-      ];
+        const tweetsRom = [
+            { id: "000", likes: 5, tags: ["js", "nodejs"] },
+            { id: "001", likes: 2, tags: ["html", "css"] },
+            { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+            { id: "003", likes: 8, tags: ["css", "react"] },
+            { id: "004", likes: 28, tags: ["js", "nodejs", "react"] },
+        ];
 
-      const tweetsVl = [
-        { id: "000", likes: 5, tags: ["js", "nodejs"] },
-        { id: "001", likes: 2, tags: ["html", "css"] },
-        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-        { id: "003", likes: 8, tags: ["css", "react"] },
-        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-      ];
+        const tweetsVl = [
+            { id: "000", likes: 5, tags: ["js", "nodejs"] },
+            { id: "001", likes: 2, tags: ["html", "css"] },
+            { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+            { id: "003", likes: 8, tags: ["css", "react"] },
+            { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+        ];
 
-      // Пройдем по всем элементам коллекции и прибавим значения свойства likes
-      // к аккумулятору, начальное значение которого укажем 0.
-      const likesRom = tweetsRom.reduce(
-        (totalLikes, tweet) => totalLikes + tweet.likes,
-        0
-      );
-      const likesVl = tweetsVl.reduce(
-        (totalLikes, tweet) => totalLikes + tweet.likes,
-        0
-      );
-      console.log(likesRom);
-      console.log(likesVl);
+        // Пройдем по всем элементам коллекции и прибавим значения свойства likes
+        // к аккумулятору, начальное значение которого укажем 0.
+        const likesRom = tweetsRom.reduce(
+            (totalLikes, tweet) => totalLikes + tweet.likes,
+            0
+        );
+        const likesVl = tweetsVl.reduce(
+            (totalLikes, tweet) => totalLikes + tweet.likes,
+            0
+        );
+        console.log(likesRom);
+        console.log(likesVl);
 
-      // Наверное подсчет лайков не одиночная операция, поэтому напишем функцию
-      // для подсчета лайков из коллекции
-      const countLikes = (tweets) =>
-        tweets.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+        // Наверное подсчет лайков не одиночная операция, поэтому напишем функцию
+        // для подсчета лайков из коллекции
+        const countLikes = (tweets) =>
+            tweets.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
 
-      console.log(countLikes(tweetsRom));
-      console.log(countLikes(tweetsVl));
+        console.log(countLikes(tweetsRom));
+        console.log(countLikes(tweetsVl));
     </script>
 
     <!-- <script>
@@ -1462,84 +1463,86 @@ console.log(customer.getOrders());
     </script> -->
 
     <script>
-      
-      class Articles {
-        articlesArr = [];
+        class Articles {
+            articlesArr = [];
 
-        sortAscending(){return this.articlesArr.sort((articleA, articleB) => {
-          return articleA.date - articleB.date})
-        }
-
-        // add(article){this.articlesArr.push(article)}
-
-        // get articles(){return this.articles}
-
-        delObj(valueTitle) {
-          this.articlesArr = this.articlesArr.filter(
-            (obj) => obj.title !== valueTitle
-          );
-        }
-        
-        rename(oldTitle, newTitle) {
-          this.articlesArr = this.articlesArr.map((obj) => {
-            if (obj.title === oldTitle) {
-              obj.title = newTitle;
+            sortAscending() {
+                return this.articlesArr.sort((articleA, articleB) => {
+                    return articleA.date - articleB.date;
+                });
             }
-            return obj;
-          });
-        }
-      }
 
-      class Article {
-        title;
-        date;
-        constructor(title, date) {
-          this.title = title;
-          this.date = date;
-          articles.articlesArr.push(this)
-        }
-      }
+            // add(article){this.articlesArr.push(article)}
 
-      // использование
-      const articles = new Articles()
-      const H = new Article("HTML", new Date(2019, 12, 1));
-      const C = new Article("CSS", new Date(2019, 10, 1));
-      const J = new Article("JavaScript", new Date(2019, 11, 1));
-      const P = new Article("Python", new Date(2019, 09, 1));
-    //   articles.add(H)
-    //   articles.add(C)
-    //   articles.add(P)
-    //   articles.add(J)
-    
-      console.log(articles.articlesArr[0].title);
-      articles.delObj("JavaScript");
-      articles.rename("HTML", "html");
-      articles.sortAscending();
-      
-      console.log(articles.articlesArr);
+            // get articles(){return this.articles}
+
+            delObj(valueTitle) {
+                this.articlesArr = this.articlesArr.filter(
+                    (obj) => obj.title !== valueTitle
+                );
+            }
+
+            rename(oldTitle, newTitle) {
+                this.articlesArr = this.articlesArr.map((obj) => {
+                    if (obj.title === oldTitle) {
+                        obj.title = newTitle;
+                    }
+                    return obj;
+                });
+            }
+        }
+
+        class Article {
+            title;
+            date;
+            constructor(title, date) {
+                this.title = title;
+                this.date = date;
+                articles.articlesArr.push(this);
+            }
+        }
+
+        // использование
+        const articles = new Articles();
+        const H = new Article("HTML", new Date(2019, 12, 1));
+        const C = new Article("CSS", new Date(2019, 10, 1));
+        const J = new Article("JavaScript", new Date(2019, 11, 1));
+        const P = new Article("Python", new Date(2019, 09, 1));
+        //   articles.add(H)
+        //   articles.add(C)
+        //   articles.add(P)
+        //   articles.add(J)
+
+        console.log(articles.articlesArr[0].title);
+        articles.delObj("JavaScript");
+        articles.rename("HTML", "html");
+        articles.sortAscending();
+
+        console.log(articles.articlesArr);
     </script>
 
     <script>
-      class Clients {
-        #login;
-        #email;
-        get login() {
-          return this.#login;
+        class Clients {
+            #login;
+            #email;
+            get login() {
+                return this.#login;
+            }
+            set login(newLogin) {
+                this.#login = newLogin;
+            }
+            get email() {
+                return this.#email;
+            }
+            set email(newEmail) {
+                this.#email = newEmail;
+            }
         }
-        set login(newLogin) {
-          this.#login = newLogin;
-        }
-        get email() {
-          return this.#email;
-        }
-        set email(newEmail) {
-          this.#email = newEmail;
-        }
-      }
-      const clientVlad = new Clients();
-      clientVlad.login = "vladcool";
-      clientVlad.email = "vladcoool@gmail.com";
-      console.log(clientVlad);
+        const clientVlad = new Clients();
+        clientVlad.login = "vladcool";
+        clientVlad.email = "vladcoool@gmail.com";
+        console.log(clientVlad);
     </script>
-  </body>
+</body>
+
 </html>
